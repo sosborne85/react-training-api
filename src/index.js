@@ -7,34 +7,51 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            countries: []
-
+            countries: [],
+            countriesLoading: true
         };
     }
 
     componentDidMount() {
-        
-        getCountries().then((countries)=> {
+
+        getCountries().then((countries) => {
             this.setState({
-                countries
+                countries,
+                countriesLoading: false
             });
         })
     }
 
 
     render() {
+        const {countries, countriesLoading} = this.state;
+        
         return (
-            <div>
-                <div>Population Count</div>
-                <ul>
-                {
-                    this.state.countries.map((country) => {
-                        return (
-                            <li key={country}>{country}</li>
-                        )
-                    })
-                }
-                </ul>
+            <div className="container">
+                <div className="title">Population Count</div>
+
+                <div className="formContainer">
+                    <div className="selectContainer">
+                        <div className="label">Country:</div>
+                        <select className="select">
+                            {countriesLoading ? <option>Loading...</option> : (
+                                countries.map(country => {
+                                    return (
+                                        <option>{country}</option>
+                                    )
+                                })
+                            )}
+                        </select>
+                    </div>
+                    <div className="selectContainer">
+                        <div className="label">Year:</div>
+                        <select className="select"></select>
+                    </div>
+                </div>
+
+                <div className="results">
+                    Results
+                </div>
             </div>
         )
     }

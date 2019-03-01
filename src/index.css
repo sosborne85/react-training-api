@@ -1,0 +1,59 @@
+body {
+    background-color: #eceeee;
+    font-family: 'ClearSansLightRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+#app {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    width: 100%;
+    
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    padding: 40px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    margin: 40px;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.formContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+}
+
+.selectContainer {
+    min-width: 250px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.select {
+    min-width: 200px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.results {
+    padding: 20px;
+    font-weight: 500;
+    font-size: 36px;
+}
